@@ -2,14 +2,11 @@ import streamlit as st
 from services.openai_service import parse_event_details, extract_text_from_image
 from services.google_calendar_service import get_calendar_list, create_event, authorize_google, get_credentials_from_code, save_credentials_to_session, get_credentials
 import os
-import json
-
-st.title('간편 구글 캘린더 등록 서비스')
-
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
+
+st.title('간편 구글 캘린더 등록 서비스')
 
 # 환경 변수에서 API 키 가져오기
 openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -97,5 +94,3 @@ if openai_api_key and google_client_id and google_client_secret:
                 st.error(f"일정 등록 중 오류가 발생했습니다: {e}")
 else:
     st.warning('OpenAI API 키와 Google Client ID, Client Secret을 입력하세요.')
-
-
