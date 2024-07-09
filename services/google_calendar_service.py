@@ -6,7 +6,7 @@ import os
 import json
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-REDIRECT_URI = os.getenv('REDIRECT_URI', "https://qjcappasapappcal-icjwbm6dzetbvabrzpvtng.streamlit.app/")  # 기본값은 localhost
+REDIRECT_URI = os.getenv('REDIRECT_URI', "http://localhost:8501")  # 기본값은 localhost
 
 def get_credentials():
     if 'credentials' in st.session_state:
